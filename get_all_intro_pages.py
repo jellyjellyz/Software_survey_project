@@ -5,7 +5,7 @@ import json
 import time
 # time.sleep(1)
 
-CACHE_FNAME = 'pages_cache.json' 
+CACHE_FNAME = './caches/pages_cache.json' 
 
 try:
     cache_file = open(CACHE_FNAME, 'r')
@@ -43,9 +43,10 @@ def make_request_using_cache(url, theheader):
 
 
 baseurl = 'https://www.careerbuilder.com'
-# count = 0
-file = open("detail_urls.text", "w")
+count = 0
+# file = open("./caches/detail_urls.text", "w")
 for i in range(1, 101):
+# for i in range(1, 2):
     extendurl = baseurl + "/jobs-software-engineer?page_number={}".format(i)
     para = {'Referer': '{}'.format(extendurl), \
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
@@ -60,13 +61,22 @@ for i in range(1, 101):
     print("Getting page {}".format(i))
     for ajob in jobs:
         try:
-            print(ajob.find(attrs = {"class": "job-title"}).text.strip())
+            job_title = ajob.find(attrs={"class": "job-title"}).text.strip()
             website = ajob.find(attrs = {"class": "job-title"}).find("a")["href"] 
-            # count+=1
-            file.write(baseurl + website + '\n')
+            job_location = ajob.find(name='div', attrs={"class": "columns end large-2 medium-3 small-12"})\
+                                        .find(name='h4', attrs={"class": "job-text"}).text
+            count+=1
+            print('-'*10)
+            print('Job{}'.format(count))
+            # print(website)
+            print(job_title)
+            print(job_location)
+            
+            # file.write(baseurl + website + '\n')
+
         except:
-            pass
+            pass   # ad
     print("="*30)
-file.close() 
+# file.close() 
 
 
