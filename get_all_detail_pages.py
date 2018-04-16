@@ -61,6 +61,7 @@ def create_new_table(db_name):
             `Name`	TEXT,
             `Region` TEXT,
             `State` TEXT,
+            `Address` TEXT,
             `GeoLat`	REAL,
             `GeoLon`	REAL
         );
@@ -152,12 +153,24 @@ for aurl in detailurl_file.readlines():
         job_snapshot = ','.join(job_snapshot_list[1:])
         job_type = job_snapshot_list[0]
         job_info = soup.find_all(name="div", attrs={"class":"description"})
-        # job_requirement = soup.find(name="div", attrs={"class":"description"}).find_all(name="ul")[1].text.strip().replace('\n', ',')
+
+
+        company_name = soup.find(name="div", attrs={"class":"company-info-panel"})\
+                    .find(name="div", attrs={"class":"company-info"}).find(name = "header").text.strip()
+
+        company_address_li = soup.find(name="div", attrs={"class":"company-info-panel"})\
+                        .find(name="ul", attrs={"class":"address"}).find_all(name = "li")
+        company_address = ''
+        pattern = re.compile(r', \w{2}')
+        for item in company_address_li:
+            company_address += item.text.replace('\n', ' ').strip()
+            if pattern.findall(item.text) != []:
+                break
 
         if len(job_info) > 1:
             job_info = ','.join([ainfo.text.strip() for ainfo in job_info])
         else:
-            job_info = job_info[0].text
+            job_info = job_info[0].text.strip()
 
 
         # print(job_company)
@@ -172,19 +185,19 @@ for aurl in detailurl_file.readlines():
         conn = sqlite3.connect(DBNAME)
         cur = conn.cursor()
         statement = '''
-            SELECT *
+            SELECT count(*)
             FROM Company
             WHERE Name=? AND Region=? AND State=?
         '''
-        params = (job_company[0], job_company[1], job_company[2])
+        params = (company_name, job_company[1], job_company[2])
         cur.execute(statement, params)
         result = cur.fetchall()
-        if len(result) == 0:
+        if result[0][0] == 0:
             statement = '''
-                INSERT INTO Company (Name, Region, State)
-                VALUES (?, ?, ?)
+                INSERT INTO Company (Name, Region, State, Address)
+                VALUES (?, ?, ?, ?)
             '''
-            insertion = (job_company[0], job_company[1], job_company[2])
+            insertion = (company_name, job_company[1], job_company[2].upper(), company_address)
             cur.execute(statement, insertion)
             conn.commit()
 
@@ -193,7 +206,7 @@ for aurl in detailurl_file.readlines():
         statement += ' FROM Company as c'
         statement += ' WHERE c.Name=? AND c.Region=? AND c.State=?'
 
-        insertion = (job_title, job_type, job_date, job_snapshot, job_info, job_company[0], job_company[1], job_company[2])
+        insertion = (job_title, job_type, job_date, job_snapshot, job_info, company_name, job_company[1], job_company[2])
         cur.execute(statement, insertion)
         conn.commit()
         c += 1

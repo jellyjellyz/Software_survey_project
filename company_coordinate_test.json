@@ -1,0 +1,364 @@
+{
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?input-Alpharetta+GA_key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?input-5555+Glenridge+Connector+Suite+825+Atlanta+GA_key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?input-5555+Glenridge+Connector+Suite+825+Atlanta+GA+30342_key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?input-HUNTER+Technical+Atlanta+IT+Staffing_key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU_query-HUNTER+Technical+Atlanta+IT+Staffing": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU_query-HUNTER+Technical+GA": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/place/textsearch/json?key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU_query-Phoenix+ATL+GA": {
+        "error_message": "You have exceeded your daily request quota for this API.",
+        "html_attributions": [],
+        "results": [],
+        "status": "OVER_QUERY_LIMIT"
+    },
+    "https://maps.googleapis.com/maps/api/geocode/json?address-Rockville, MD_key-AIzaSyAE0QigYI1lotM5qPpzsdgNo1c0uFhaiWU": {
+        "error_message": "This API project is not authorized to use this API. Please ensure this API is activated in the Google Developers Console: https://console.developers.google.com/apis/api/geocoding_backend?project=_",
+        "results": [],
+        "status": "REQUEST_DENIED"
+    },
+    "https://maps.googleapis.com/maps/api/geocode/json?address-Rockville, MD_key-AIzaSyA6mopBUXk8znw04nkpfk6vxEPMRXoz_tw": {
+        "error_message": "This API project is not authorized to use this API. Please ensure this API is activated in the Google Developers Console: https://console.developers.google.com/apis/api/geocoding_backend?project=_",
+        "results": [],
+        "status": "REQUEST_DENIED"
+    },
+    "https://maps.googleapis.com/maps/api/geocode/json?address-Rockville, MD_key-AIzaSyAPBhXjwlAnUjg_PIn7chOm3T5b-CsBY6M": {
+        "results": [
+            {
+                "address_components": [
+                    {
+                        "long_name": "Rockville",
+                        "short_name": "Rockville",
+                        "types": [
+                            "locality",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "4",
+                        "short_name": "4",
+                        "types": [
+                            "administrative_area_level_3",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Montgomery County",
+                        "short_name": "Montgomery County",
+                        "types": [
+                            "administrative_area_level_2",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Maryland",
+                        "short_name": "MD",
+                        "types": [
+                            "administrative_area_level_1",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "United States",
+                        "short_name": "US",
+                        "types": [
+                            "country",
+                            "political"
+                        ]
+                    }
+                ],
+                "formatted_address": "Rockville, MD, USA",
+                "geometry": {
+                    "bounds": {
+                        "northeast": {
+                            "lat": 39.120714,
+                            "lng": -77.0919957
+                        },
+                        "southwest": {
+                            "lat": 39.053153,
+                            "lng": -77.20030179999999
+                        }
+                    },
+                    "location": {
+                        "lat": 39.0839973,
+                        "lng": -77.1527578
+                    },
+                    "location_type": "APPROXIMATE",
+                    "viewport": {
+                        "northeast": {
+                            "lat": 39.120714,
+                            "lng": -77.0919957
+                        },
+                        "southwest": {
+                            "lat": 39.053153,
+                            "lng": -77.20030179999999
+                        }
+                    }
+                },
+                "place_id": "ChIJFZHj_iwqtokRJN_J2RC-pew",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            }
+        ],
+        "status": "OK"
+    },
+    "https://maps.googleapis.com/maps/api/geocode/json?address-Itasca, IL_key-AIzaSyAPBhXjwlAnUjg_PIn7chOm3T5b-CsBY6M": {
+        "results": [
+            {
+                "address_components": [
+                    {
+                        "long_name": "Itasca",
+                        "short_name": "Itasca",
+                        "types": [
+                            "locality",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Addison Township",
+                        "short_name": "Addison Township",
+                        "types": [
+                            "administrative_area_level_3",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "DuPage County",
+                        "short_name": "Dupage County",
+                        "types": [
+                            "administrative_area_level_2",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Illinois",
+                        "short_name": "IL",
+                        "types": [
+                            "administrative_area_level_1",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "United States",
+                        "short_name": "US",
+                        "types": [
+                            "country",
+                            "political"
+                        ]
+                    }
+                ],
+                "formatted_address": "Itasca, IL, USA",
+                "geometry": {
+                    "bounds": {
+                        "northeast": {
+                            "lat": 41.9926389,
+                            "lng": -87.985231
+                        },
+                        "southwest": {
+                            "lat": 41.955374,
+                            "lng": -88.05136
+                        }
+                    },
+                    "location": {
+                        "lat": 41.9750287,
+                        "lng": -88.0072909
+                    },
+                    "location_type": "APPROXIMATE",
+                    "viewport": {
+                        "northeast": {
+                            "lat": 41.9926389,
+                            "lng": -87.985231
+                        },
+                        "southwest": {
+                            "lat": 41.955374,
+                            "lng": -88.05136
+                        }
+                    }
+                },
+                "place_id": "ChIJkwy8TvqtD4gR4DxQz5W1Cgc",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            }
+        ],
+        "status": "OK"
+    },
+    "https://maps.googleapis.com/maps/api/geocode/json?address-Mesa,+AZ+85201_key-AIzaSyAPBhXjwlAnUjg_PIn7chOm3T5b-CsBY6M": {
+        "results": [
+            {
+                "address_components": [
+                    {
+                        "long_name": "85201",
+                        "short_name": "85201",
+                        "types": [
+                            "postal_code"
+                        ]
+                    },
+                    {
+                        "long_name": "Mesa",
+                        "short_name": "Mesa",
+                        "types": [
+                            "locality",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Maricopa County",
+                        "short_name": "Maricopa County",
+                        "types": [
+                            "administrative_area_level_2",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "Arizona",
+                        "short_name": "AZ",
+                        "types": [
+                            "administrative_area_level_1",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "United States",
+                        "short_name": "US",
+                        "types": [
+                            "country",
+                            "political"
+                        ]
+                    }
+                ],
+                "formatted_address": "Mesa, AZ 85201, USA",
+                "geometry": {
+                    "bounds": {
+                        "northeast": {
+                            "lat": 33.470669,
+                            "lng": -111.8160549
+                        },
+                        "southwest": {
+                            "lat": 33.407522,
+                            "lng": -111.891181
+                        }
+                    },
+                    "location": {
+                        "lat": 33.4329528,
+                        "lng": -111.8449346
+                    },
+                    "location_type": "APPROXIMATE",
+                    "viewport": {
+                        "northeast": {
+                            "lat": 33.470669,
+                            "lng": -111.8160549
+                        },
+                        "southwest": {
+                            "lat": 33.407522,
+                            "lng": -111.891181
+                        }
+                    }
+                },
+                "place_id": "ChIJuWnmpSoIK4cRrjr1uxS1ocM",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "status": "OK"
+    },
+    "https://maps.googleapis.com/maps/api/geocode/json?address-New+York+City,NY_key-AIzaSyAPBhXjwlAnUjg_PIn7chOm3T5b-CsBY6M": {
+        "results": [
+            {
+                "address_components": [
+                    {
+                        "long_name": "New York",
+                        "short_name": "New York",
+                        "types": [
+                            "locality",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "New York",
+                        "short_name": "NY",
+                        "types": [
+                            "administrative_area_level_1",
+                            "political"
+                        ]
+                    },
+                    {
+                        "long_name": "United States",
+                        "short_name": "US",
+                        "types": [
+                            "country",
+                            "political"
+                        ]
+                    }
+                ],
+                "formatted_address": "New York, NY, USA",
+                "geometry": {
+                    "bounds": {
+                        "northeast": {
+                            "lat": 40.9175771,
+                            "lng": -73.70027209999999
+                        },
+                        "southwest": {
+                            "lat": 40.4773991,
+                            "lng": -74.25908989999999
+                        }
+                    },
+                    "location": {
+                        "lat": 40.7127753,
+                        "lng": -74.0059728
+                    },
+                    "location_type": "APPROXIMATE",
+                    "viewport": {
+                        "northeast": {
+                            "lat": 40.9175771,
+                            "lng": -73.70027209999999
+                        },
+                        "southwest": {
+                            "lat": 40.4773991,
+                            "lng": -74.25908989999999
+                        }
+                    }
+                },
+                "place_id": "ChIJOwg_06VPwokRYv534QaPC8g",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            }
+        ],
+        "status": "OK"
+    }
+}

@@ -1,171 +1,405 @@
-Jobs&Company Table already exists. Delete?yes/no
-Deleting the table...
-Creating new table...
-Getting cached data...
-Jr Software Developer
+(S
+  (NP RESPONSIBILITIES/NNS)
+  :/:
+  (NP Kforce/NNP)
+  has/VBZ
+  (NP a/DT client/NN)
+  that/WDT
+  is/VBZ
+  seeking/VBG
+  (NP a/DT Lead/NNP Front/NNP End/NNP Software/NNP Engineer/NNP)
+  (NP in/IN Baltimore/NNP)
+  ,/,
+  (NP Maryland/NNP)
+  (/(
+  (NP MD/NNP)
+  )/)
+  .Responsibilities/VBZ
+  :/:
+  (NP Make/NN)
+  :/:
+  Above/IN
+  all/DT
+  else/RB
+  ,/,
+  (NP write/JJ great/JJ code/NN)
+  ,/,
+  create/VB
+  beautiful/JJ
+  and/CC
+  engaging/VBG
+  (NP front/JJ ends/NNS)
+  (NP with/IN code/NN)
+  that/WDT
+  is/VBZ
+  maintainable/JJ
+  ,/,
+  reusable/JJ
+  ,/,
+  shareable/JJ
+  ,/,
+  and/CC
+  is/VBZ
+  built/VBN
+  ,/,
+  tested/VBN
+  ,/,
+  deployed/VBN
+  and/CC
+  maintained/VBN
+  according/VBG
+  to/TO
+  (NP Software/NNP Development/NNP Life/NNP Cycle/NNP)
+  (NP best/JJS practices/NNS)
+  Lead/VBP
+  :/:
+  (NP Guide/NNP colleagues/NNS)
+  using/VBG
+  (NP the/DT wisdom/NN)
+  and/CC
+  (NP insight/NN)
+  you/PRP
+  've/VBP
+  cultivated/VBN
+  ,/,
+  elevate/VB
+  our/PRP$
+  (NP work/NN product/NN)
+  by/IN
+  establishing/VBG
+  and/CC
+  communicating/VBG
+  (NP best/JJS practices/NNS)
+  for/IN
+  (NP the/DT team/NN)
+  ,/,
+  giving/VBG
+  (NP good/JJ feedback/NN)
+  (NP on/IN colleagues/NNS)
+  '/POS
+  (NP code/NN)
+  ,/,
+  and/CC
+  mentoring/VBG
+  (NP Junior/NNP Developers/NNP Engage/NNP)
+  :/:
+  Directly/RB
+  interface/VBP
+  (NP with/IN clients/NNS)
+  and/CC
+  be/VB
+  (NP a/DT mouthpiece/NN)
+  for/IN
+  our/PRP$
+  (NP team/NN)
+  ,/,
+  take/VB
+  (NP on/IN work/NN)
+  and/CC
+  see/VB
+  it/PRP
+  through/IN
+  to/TO
+  (NP completion/NN)
+  with/IN
+  (NP minimal/JJ oversight/NN)
+  ;/:
+  (NP Know/NNP)
+  when/WRB
+  to/TO
+  ask/VB
+  (NP the/DT right/JJ questions/NNS)
+  and/CC
+  when/WRB
+  to/TO
+  -figure/VB
+  it/PRP
+  out/RP
+  yourself/PRP
+  ;/:
+  (NP Serve/NNP)
+  as/IN
+  (NP a/DT resource/NN)
+  to/TO
+  guide/VB
+  (NP teammates/NNS)
+  as/IN
+  they/PRP
+  do/VBP
+  (NP the/DT same/JJ Learn/NNP)
+  :/:
+  (NP Learn/NN)
+  (NP from/IN colleagues/NNS)
+  and/CC
+  (NP the/DT industry/NN)
+  ;/:
+  (NP Stay/NNP)
+  on/IN
+  the/DT
+  cutting/VBG
+  (NP edge/NN)
+  of/IN
+  (NP new/JJ technologies/NNS)
+  and/CC
+  continue/VB
+  to/TO
+  push/VB
+  (NP limits/NNS)
+  ;/:
+  (NP Play/NNP)
+  ,/,
+  explore/RB
+  ,/,
+  and/CC
+  evaluate/VB
+  which/WDT
+  (NP new/JJ tools/NNS)
+  and/CC
+  (NP processes/NNS)
+  can/MD
+  drive/VB
+  (NP value/NN)
+  for/IN
+  our/PRP$
+  (NP clients/NNS Architect/NNP)
+  and/CC
+  (NP implement/JJ high/JJ quality/NN web/NN software/NN)
+  for/IN
+  (NP a/DT variety/NN)
+  (NP of/IN clients/NNS)
+  Understand/VBP
+  (NP the/DT vision/NN)
+  of/IN
+  (NP a/DT project/NN)
+  and/CC
+  (NP work/NN)
+  closely/RB
+  (NP with/IN team/NN members/NNS)
+  to/TO
+  see/VB
+  it/PRP
+  through/IN
+  to/TO
+  completion/VB
+  (NP Support/NNP)
+  and/CC
+  learn/VB
+  from/IN
+  your/PRP$
+  (NP teammates/NNS Communicate/NNP)
+  well/RB
+  with/IN
+  (NP other/JJ Developers/NNPS)
+  as/RB
+  well/RB
+  (NP as/IN Designers/NNS)
+  ,/,
+  (NP Project/NN Managers/NNP)
+  ,/,
+  (NP Business/NNP Stakeholders/NNP)
+  ,/,
+  and/CC
+  (NP Clients/NNS)
+  Hold/VBP
+  yourself/PRP
+  and/CC
+  (NP others/NNS)
+  accountable/JJ
+  for/IN
+  delivering/VBG
+  (NP on/IN deadline/NN Stay/NNP)
+  committed/VBD
+  to/TO
+  raising/VBG
+  (NP the/DT bar/NN)
+  (NP for/IN code/NN quality/NN)
+  ,/,
+  (NP efficiency/NN)
+  ,/,
+  and/CC
+  (NP maintainability/NN Participate/NNP)
+  in/IN
+  and/CC
+  (NP lead/JJ code/NN reviews/NNS)
+  (NP with/IN team/NN members/NNS)
+  and/CC
+  (NP clients/NNS)
+  Actively/RB
+  report/VBP
+  (NP status/NN)
+  to/TO
+  team/VB
+  (NP members/NNS)
+  and/CC
+  (NP clients/NNS)
+  ,/,
+  (NP REQUIREMENTS/NNS)
+  :/:
+  (NP Bachelor/NNP)
+  's/POS
+  (NP degree/NN)
+  (NP in/IN computer/NN science/NN)
+  or/CC
+  (NP equivalent/JJ experience/NN)
+  Experienced/VBD
+  (NP front-end/JJ developer/NN)
+  with/IN
+  ,/,
+  with/IN
+  at/IN
+  least/JJS
+  4/CD
+  (NP
+    years/NNS
+    software/NN
+    development/NN
+    experience/NN
+    Experience/NN)
+  (NP with/IN Gulp/NNP)
+  and/CC
+  (NP Webpack/NNP Experience/NNP)
+  (NP in/IN LESS/NNP)
+  ,/,
+  (NP Sass/NNP)
+  ,/,
+  or/CC
+  (NP another/DT CSS/NNP)
+  preprocessors/VBZ
+  a/DT
+  plus/JJ
+  ,/,
+  but/CC
+  not/RB
+  (NP required/JJ Experience/NN)
+  (NP in/IN JavaScript/NNP frameworks/NNS)
+  (NP such/JJ as/IN React/NNP Willingness/NNP)
+  to/TO
+  mentor/VB
+  and/CC
+  lead/VB
+  (NP a/DT small/JJ team/NN)
+  of/IN
+  (NP other/JJ front-end/JJ Engineers/NNS Portfolio/NNP)
+  of/IN
+  your/PRP$
+  (NP work/NN Deep/NNP knowledge/NN)
+  (NP of/IN CSS/NNP)
+  ,/,
+  (NP HTML/NNP)
+  ,/,
+  and/CC
+  (NP JavaScript/NNP)
+  and/CC
+  how/WRB
+  they/PRP
+  fit/VBP
+  together/RB
+  (NP Use/NNP)
+  (NP of/IN Docker/NNP)
+  and/CC
+  (NP Source/NNP Control/NNP)
+  (NP such/JJ as/IN GitLab/NNP)
+  (NP a/DT plus/NN)
+  ,/,
+  but/CC
+  not/RB
+  (NP required/JJ Benefits/NNS)
+  :/:
+  (NP The/DT position/NN)
+  will/MD
+  require/VB
+  you/PRP
+  to/TO
+  work/VB
+  on-site/JJ
+  both/DT
+  from/IN
+  our/PRP$
+  (NP Baltimore/NNP office/NN)
+  and/CC
+  (NP from/IN client/NN workspaces/NNS)
+  ,/,
+  while/IN
+  managing/VBG
+  (NP multiple/JJ tasks/NNS)
+  and/CC
+  delivering/VBG
+  (NP projects/NNS)
+  on-time/JJ
+  and/CC
+  (NP on-budget/JJ Dog/NNP)
+  (NP friendly/JJ office/NN Excellent/NNP benefit/NN package/NN)
+  that/WDT
+  includes/VBZ
+  medical/JJ
+  ,/,
+  dental/JJ
+  ,/,
+  (NP vision/NN)
+  ,/,
+  401/CD
+  (/(
+  (NP k/NN)
+  )/)
+  ,/,
+  (NP transportation/NN subsidy/NN)
+  ,/,
+  and/CC
+  (NP more/JJR Annual/JJ training/NN budget/NN)
+  dedicated/VBN
+  to/TO
+  your/PRP$
+  (NP professional/JJ development/NN A/NNP)
+  (NP flexible/JJ schedule/NN Delicious/NNP)
+  catered/VBD
+  (NP monthly/JJ meetings/NNS Healthy/NNP)
+  //VBD
+  (NP less-healthy/JJ snacks/NNS)
+  ,/,
+  (NP beverages/NNS)
+  and/CC
+  (NP coffee/NN Kforce/NNP)
+  is/VBZ
+  (NP
+    an/DT
+    Equal/JJ
+    Opportunity/Affirmative/NNP
+    Action/NNP
+    Employer/NNP)
+  ./.)
 --------------------
-JOB 1:
-==============================
-Getting cached data...
-Jr. Software Developer
+(S
+  All/DT
+  qualified/VBD
+  (NP applicants/NNS)
+  will/MD
+  receive/VB
+  (NP consideration/NN)
+  (NP for/IN employment/NN)
+  (NP without/IN regard/NN)
+  to/TO
+  (NP race/NN)
+  ,/,
+  (NP color/NN)
+  ,/,
+  (NP religion/NN)
+  ,/,
+  (NP sex/NN)
+  ,/,
+  (NP pregnancy/NN)
+  ,/,
+  (NP sexual/JJ orientation/NN)
+  ,/,
+  (NP gender/NN identity/NN)
+  ,/,
+  (NP national/JJ origin/NN)
+  ,/,
+  (NP age/NN)
+  ,/,
+  protected/VBD
+  (NP veteran/NN status/NN)
+  ,/,
+  or/CC
+  (NP disability/NN status/NN)
+  ./.)
 --------------------
-JOB 2:
-==============================
-Getting cached data...
-Lead Front End Software Engineer
---------------------
-JOB 3:
-==============================
-Getting cached data...
-Junior Software Developer
---------------------
-JOB 4:
-==============================
-Getting cached data...
-Software Engineer Entry Level
---------------------
-JOB 5:
-==============================
-Getting cached data...
-Senior User Interface Software Engineer (strong C#/.Net experience required)
---------------------
-JOB 6:
-==============================
-Getting cached data...
-Junior Software Engineer
---------------------
-JOB 7:
-==============================
-Getting cached data...
-Senior Front End Software Developer
---------------------
-JOB 8:
-==============================
-Getting cached data...
-Jr. Java Software Developer
---------------------
-JOB 9:
-==============================
-Getting cached data...
-Entry Level Software Engineer - C or C++
---------------------
-JOB 10:
-==============================
-Getting cached data...
-Jr. Software Engineer
---------------------
-JOB 11:
-==============================
-Getting cached data...
-Junior Software Engineer at NASA (Engineer I)
---------------------
-JOB 12:
-==============================
-Getting cached data...
-Jr. Software Engineer
---------------------
-JOB 13:
-==============================
-Getting cached data...
-Junior Software Engineer
---------------------
-JOB 14:
-==============================
-Getting cached data...
-Junior Software Developer
---------------------
-JOB 15:
-==============================
-Getting cached data...
-.NET/Java entry level Software developer
---------------------
-JOB 16:
-==============================
-Getting cached data...
-Entry Level Software Developer
---------------------
-JOB 17:
-==============================
-Getting cached data...
-Front End Software Developer
---------------------
-JOB 18:
-==============================
-Getting cached data...
-Junior Software Developer
---------------------
-JOB 19:
-==============================
-Getting cached data...
-Software Engineering Intern
---------------------
-JOB 20:
-==============================
-Getting cached data...
-Software Engineer Intern
---------------------
-JOB 21:
-==============================
-Getting cached data...
-Junior .NET Software Developer
---------------------
-JOB 22:
-==============================
-Getting cached data...
-Junior Software Engineer
---------------------
-JOB 23:
-==============================
-Getting cached data...
-Software Engineer II - UI Angular and Java Developer
---------------------
-JOB 24:
-==============================
-Getting cached data...
-Software Developer - (Entry Level) C++
---------------------
-JOB 25:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 26:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 27:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 28:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 29:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 30:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 31:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 32:
-==============================
-Getting cached data...
-Software Engineer
---------------------
-JOB 33:
-==============================
-Making a request for new data...
-Requesting new ip list...
-Getting new proxy IP table...

@@ -1,0 +1,116 @@
+abap
+actionscript
+ada
+algol
+alice
+apl
+asp / asp.net
+assembly language
+awk
+bash
+bbc basic
+c
+c++
+c#
+c shell
+cobol
+css / css3
+d
+delphi
+dhtml
+dreamweaver
+e4x
+elixir
+erlang
+f#
+forth
+fortran
+functional programming
+gnu octave
+go
+haskell
+html
+html5
+idl
+intercal
+java
+javascript
+node.js
+jquery
+bootstrap
+javascript for designers
+coffeescript
+functional javascript
+javascript style
+ksh
+labview
+lisp
+autolisp
+clojure
+common lisp
+emacs lisp
+scheme
+logo
+matlab
+metaquotes language
+ml
+modula-3
+ms access
+mysql
+nxt-g
+objective-c
+ocaml
+oo concepts
+oo languages
+pascal
+perl
+php
+pl/i
+pl/sql
+postgresql
+postscript
+prolog
+pure data
+python
+r
+rapidweaver
+ravendb
+rexx
+ruby on rails
+s-plus
+sas
+scala
+scratch
+scilab
+sed
+sgml
+simula
+smalltalk
+gnu smalltalk
+smalltalk/x
+squeak
+smil
+snobol
+sql
+sqlite
+ssi
+stata
+swift
+tcl/tk
+tex and latex
+unified modeling language
+vbscript
+verilog
+vhdl
+visual basic
+visual foxpro
+vrml
+wap/wml
+xml
+basic guide
+dtd
+dom nodes
+xsl-fo
+xslt
+xul
+xpath
