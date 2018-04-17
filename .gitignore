@@ -1,2 +1,3 @@
 data_process/__pycache__
 data_process/secrets.py
+.DS_Store
