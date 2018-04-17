@@ -15,7 +15,6 @@ for result in results:
     description += result[0].replace('\n', ' ')
 # print(description)
 
-# f = open('jobDescription.txt', 'w')
-f = open('jobSnapshot.txt', 'w')
+f = open('jobDescription.txt', 'w')
 f.write(description)
 f.close()

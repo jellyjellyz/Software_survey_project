@@ -1,10 +1,11 @@
+###########plot all jobs on a single map, and plot jobs in different color correponding to different state.
+
 import plotly.plotly as py
 from plotly.graph_objs import *
 import sqlite3
 from state_lookup_table import states
 from secrets import mapbox_access_token
 import colorlover as cl
-
 
 conn = sqlite3.connect('jobs.sqlite')
 color_list = (cl.scales['10']['div']['Spectral'] + cl.scales['10']['div']['RdYlGn'])*3
