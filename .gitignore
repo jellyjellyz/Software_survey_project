@@ -1,2 +1,2 @@
-./data_process/__pycache__
-./data_process/secrets.py
+data_process/__pycache__
+data_process/secrets.py
