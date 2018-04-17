@@ -1,3 +1,5 @@
+#####plot top 30 demanding software programming languages
+
 import sqlite3
 from nltk import word_tokenize
 from nltk import FreqDist
@@ -37,7 +39,7 @@ for token in discrip_tokenize:
 language_name = []
 freq = []
 language_freq_list = freq_dist.most_common()
-for language in language_freq_list[:50]:
+for language in language_freq_list[:30]:
     language_name.append(language[0])
     freq.append(language[1])
 # print(language_name)
@@ -47,10 +49,21 @@ data = [go.Bar(
     x=language_name,
     y=freq,
     marker=dict(
-    color=['rgba(222,45,38,0.8)']*5 + ['rgba(204,204,204,1)']*45
+    color=['rgba(222,45,38,0.8)']*5 + ['rgba(204,204,204,1)']*25
 ))]
 layout = go.Layout(
     title='Programming Language Distribution',
+    paper_bgcolor='rgb(242,242,242)',
+    autosize=False,
+    width=1000,
+    height=600,
+    margin=go.Margin(
+        l=50,
+        r=50,
+        b=100,
+        t=100,
+    ),
+
 )
 fig = go.Figure(data=data, layout=layout)
 py.plot(fig, filename='programming language distribution')

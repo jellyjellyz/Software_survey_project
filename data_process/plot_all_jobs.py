@@ -47,7 +47,12 @@ for idx, key in enumerate(states):
                     ))]
 
 layout = Layout(
-            autosize=True,
+            autosize=False,
+            width=1000,
+            height=600,
+            margin = dict(l = 0, r = 0, t = 50, b = 0),
+            paper_bgcolor='rgb(242,242,242)',
+            showlegend=False,
             hovermode='closest',
             mapbox=dict(
                         accesstoken=mapbox_access_token,

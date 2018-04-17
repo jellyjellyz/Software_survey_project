@@ -2,8 +2,8 @@
 import plotly.plotly as py
 from plotly.graph_objs import *
 import sqlite3
-from state_lookup_table import states
-# from state_short import states
+# from state_lookup_table import states
+from state_short import states
 from random import randint
 
 from secrets import mapbox_access_token
@@ -73,8 +73,12 @@ for key in geo_by_state:
                     ),hoverinfo='text'
                     )]
     layout = Layout(
-            autosize=True,
+            autosize=False,
+            width=1000,
+            height=600,
+            margin = dict(l = 0, r = 0, t = 50, b = 0),
             showlegend=False,
+            paper_bgcolor='rgb(242,242,242)',
             title = 'Jobs in {}'.format(geo_by_state[key].state),
             hovermode='closest',
             mapbox=dict(
@@ -85,6 +89,7 @@ for key in geo_by_state:
                             lat=(max(lat_vals)+min(lat_vals))*0.5,
                             lon=(max(lon_vals)+min(lon_vals))*0.5
                         ),
+
                         pitch=0,
                         zoom=5.8
                     ),

@@ -32,6 +32,16 @@ data = [go.Bar(
     color=['rgba(222,45,38,0.8)']*10 + ['rgba(204,204,204,1)']*40
 ))]
 layout = go.Layout(
+    autosize=False,
+    width=1000,
+    height=600,
+    margin=go.Margin(
+        l=50,
+        r=50,
+        b=100,
+        t=100,
+    ),
+    paper_bgcolor='rgb(242,242,242)',
     title='Number of positions by State'
 )
 fig = go.Figure(data=data, layout=layout)

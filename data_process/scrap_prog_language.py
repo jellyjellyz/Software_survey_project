@@ -1,3 +1,5 @@
+#####scrap top100+ popular programming languages from https://www.whoishostingthis.com/resources/programming/
+###save top100+ popular programming languages into prog_language.txt
 import requests
 import json
 from bs4 import BeautifulSoup
