@@ -1,4 +1,5 @@
 states = {
+        'US': 'United States',
         'AK': 'Alaska',
         'AL': 'Alabama',
         'AR': 'Arkansas',

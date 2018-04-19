@@ -7,69 +7,74 @@ from state_lookup_table import states
 from secrets import mapbox_access_token
 import colorlover as cl
 
-conn = sqlite3.connect('jobs.sqlite')
-color_list = (cl.scales['10']['div']['Spectral'] + cl.scales['10']['div']['RdYlGn'])*3
-data_list = []
-for idx, key in enumerate(states):
-    cur = conn.cursor()
-    statement = '''
-            SELECT j.Title, c.GeoLat, c.GeoLon
-            FROM Jobs AS j
-                JOIN Company AS c
-                ON j.CompanyId = c.Id
-            WHERE c.State = '{}'
-    '''.format(key)
-    # print(statement)
-    cur.execute(statement)
+def plot_all_jobs():
+    conn = sqlite3.connect('jobs.sqlite')
+    color_list = (cl.scales['10']['div']['Spectral'] + cl.scales['10']['div']['RdYlGn'])*3
+    data_list = []
+    for idx, key in enumerate(states):
+        cur = conn.cursor()
+        statement = '''
+                SELECT j.Title, c.GeoLat, c.GeoLon
+                FROM Jobs AS j
+                    JOIN Company AS c
+                    ON j.CompanyId = c.Id
+                WHERE c.State = '{}'
+        '''.format(key)
+        # print(statement)
+        cur.execute(statement)
 
-    result = cur.fetchall()
-    # print(result)
-    if result == []:
-        continue
+        result = cur.fetchall()
+        # print(result)
+        if result == []:
+            continue
 
-    lat_vals = []
-    lon_vals = []
-    text_vals = []
-    for acompany in result:
-        lat_vals.append(acompany[1])
-        lon_vals.append(acompany[2])
-        text_vals.append(acompany[0])
-    data_list += [Scattermapbox(
-                    lon = lon_vals,
-                    lat = lat_vals,
-                    text = text_vals,
-                    mode = 'markers',
-                    name = 'Jobs in {}'.format(key),
-                    marker = Marker(
-                        color = color_list[idx],
-                        size = 5,
-                        symbol = 'circle',
-                    ))]
+        lat_vals = []
+        lon_vals = []
+        text_vals = []
+        for acompany in result:
+            lat_vals.append(acompany[1])
+            lon_vals.append(acompany[2])
+            text_vals.append(acompany[0])
+        data_list += [Scattermapbox(
+                        lon = lon_vals,
+                        lat = lat_vals,
+                        text = text_vals,
+                        mode = 'markers',
+                        name = 'Jobs in {}'.format(key),
+                        marker = Marker(
+                            color = color_list[idx],
+                            size = 5,
+                            symbol = 'circle',
+                        ))]
 
-layout = Layout(
-            autosize=False,
-            width=1000,
-            height=600,
-            margin = dict(l = 0, r = 0, t = 50, b = 0),
-            paper_bgcolor='rgb(242,242,242)',
-            showlegend=False,
-            hovermode='closest',
-            mapbox=dict(
-                        accesstoken=mapbox_access_token,
-                        style='dark',
-                        bearing=0,
-                        center=dict(
-                            lat=37.0902,
-                            lon=-95.7129
+    layout = Layout(
+                autosize=False,
+                width=1000,
+                height=600,
+                margin = dict(l = 0, r = 0, t = 50, b = 0),
+                paper_bgcolor='rgb(242,242,242)',
+                showlegend=False,
+                hovermode='closest',
+                mapbox=dict(
+                            accesstoken=mapbox_access_token,
+                            style='dark',
+                            bearing=0,
+                            center=dict(
+                                lat=37.0902,
+                                lon=-95.7129
+                            ),
+                            pitch=0,
+                            zoom=3.6
                         ),
-                        pitch=0,
-                        zoom=3.6
-                    ),
-                )
+                    )
 
-data = Data(data_list)
-fig = dict(data = data, layout = layout)
-py.plot(fig, filename = 'jobs in America')
+    data = Data(data_list)
+    fig = dict(data = data, layout = layout)
+    py.plot(fig, filename = 'jobs in America')
+
+
+if __name__ == '__main__':
+    plot_all_jobs()
 
 
 

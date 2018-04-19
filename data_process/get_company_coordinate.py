@@ -1,3 +1,7 @@
+#####get company geo coordinate with google maps api
+#####converting a human-readable address into geographic coordinates for ploting via plotly.
+####caches saved in ./caches/company_coordinate.json
+
 import sqlite3
 import requests
 import json
@@ -70,7 +74,7 @@ zero_resp_query = {}
 for aresult in result:
     count += 1
     thequery = aresult[1].replace(' ', '+')
-    search_params = {"key": google_places_key, "address": thequery}
+    search_params = {"key": google_geo_key, "address": thequery}
     result = make_request_using_cache(google_url_text, search_params)
     num_result = len(result['results'])
     print("-"*10)

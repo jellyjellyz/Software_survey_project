@@ -1,3 +1,9 @@
+#########crawl pages saved in ./caches/detail_urls.text one by one
+########information needed: 
+#######company: name, region, state, address
+#######job: name, postdate, jobsnapshot, jobdescription, jobtype
+#######chaches saved in ./caches/detail_pages{}.json, {}=0~24 (avoiding each cache file being too large, each file will include 100 jobs)
+######there are 2500 job detail_urls for crawling, but some jobs are expired, so there will be less than 2500 jobs in total.
 import requests
 from bs4 import BeautifulSoup
 import proxy_ip
@@ -7,7 +13,7 @@ import sqlite3
 import re
 
 def make_request_using_cache(url, theheader, the_num_of_job):
-    file_num = the_num_of_job//101
+    file_num = the_num_of_job//101   ######seperate cached pages into 25 cache files, with each file including 100 job_pages.
     CACHE_FNAME = './caches/detail_pages{}.json'.format(file_num)
     try:
         cache_file = open(CACHE_FNAME, 'r')
@@ -106,124 +112,126 @@ def init_db(db_name):
         else:
             quit()
 
+if __name__ == '__main__':
 
-count = 0
-count_error = 0
-c = 0
-FILENAME = './caches/detail_urls.text'
-errorfile = open('./caches/error_url.text', "w")
-detailurl_file = open(FILENAME, "r") 
+    count = 0
+    count_error = 0
+    c = 0
+    FILENAME = './caches/detail_urls.text'
+    errorfile = open('./caches/error_url.text', "w")
+    detailurl_file = open(FILENAME, "r") 
 
-# # initialize database
-DBNAME = 'jobs.sqlite'           
-init_db(DBNAME)
+    ### initialize database
+    DBNAME = 'jobs.sqlite'           
+    init_db(DBNAME)
 
-error_num = []
+    error_num = []
 
-for aurl in detailurl_file.readlines():
-    aurl = aurl[:-1]
-    count += 1
-    para = {'Referer': '{}'.format(aurl), \
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
-    'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
-    resp = make_request_using_cache(aurl, para, count)
-    soup = BeautifulSoup(resp, 'html.parser')
-
-
-    try:
-        job_title = soup.find_all(name="div", attrs={"class":"small-12 item"})[0].text.strip()
-    except:
-        continue  # skip expired jobs
-
-    try:
-        job_company = soup.find_all(name="div", attrs={"class":"small-12 item"})[1].\
-                        find(name="h2", attrs={"id":"job-company-name"}).text.strip()\
-                        .replace('\n', '').replace('•',';').replace(',',';').split(';')
-        if len(job_company) > 3:
-            # job_company = [','.join(job_company[:2])]+job_company[2:]
-            job_company = [','.join(job_company[:2])]+[','.join(job_company[2:-1])]+[job_company[-1].strip()]
-        elif len(job_company) < 3:
-            job_company = [None]+job_company
-        else:
-            job_company[-1] = job_company[-1].strip()
-
-        job_date = soup.find_all(name="div", attrs={"class":"small-12 item"})[1].\
-                        find(name="h3", attrs={"id":"job-begin-date"}).text.strip()
-        job_snapshot_list = soup.find(name="div", attrs={"class":"job-facts item"}).text.strip().replace('\n\n\n',', ').split(',')
-        job_snapshot = ','.join(job_snapshot_list[1:])
-        job_type = job_snapshot_list[0]
-        job_info = soup.find_all(name="div", attrs={"class":"description"})
+    for aurl in detailurl_file.readlines():
+        aurl = aurl[:-1]
+        count += 1
+        para = {'Referer': '{}'.format(aurl), \
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
+        'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+        resp = make_request_using_cache(aurl, para, count)
+        soup = BeautifulSoup(resp, 'html.parser')
 
 
-        company_name = soup.find(name="div", attrs={"class":"company-info-panel"})\
-                    .find(name="div", attrs={"class":"company-info"}).find(name = "header").text.strip()
+        try:
+            job_title = soup.find_all(name="div", attrs={"class":"small-12 item"})[0].text.strip()
+        except:
+            continue  # skip expired jobs
 
-        company_address_li = soup.find(name="div", attrs={"class":"company-info-panel"})\
-                        .find(name="ul", attrs={"class":"address"}).find_all(name = "li")
-        company_address = ''
-        pattern = re.compile(r', \w{2}')
-        for item in company_address_li:
-            company_address += item.text.replace('\n', ' ').strip()
-            if pattern.findall(item.text) != []:
-                break
+        try:
+            job_company = soup.find_all(name="div", attrs={"class":"small-12 item"})[1].\
+                            find(name="h2", attrs={"id":"job-company-name"}).text.strip()\
+                            .replace('\n', '').replace('•',';').replace(',',';').split(';')
+            if len(job_company) > 3:
+                # job_company = [','.join(job_company[:2])]+job_company[2:]
+                job_company = [','.join(job_company[:2])]+[','.join(job_company[2:-1])]+[job_company[-1].strip()]
+            elif len(job_company) < 3:
+                job_company = [None]+job_company
+            else:
+                job_company[-1] = job_company[-1].strip()
 
-        if len(job_info) > 1:
-            job_info = ','.join([ainfo.text.strip() for ainfo in job_info])
-        else:
-            job_info = job_info[0].text.strip()
+            job_date = soup.find_all(name="div", attrs={"class":"small-12 item"})[1].\
+                            find(name="h3", attrs={"id":"job-begin-date"}).text.strip()
+            job_snapshot_list = soup.find(name="div", attrs={"class":"job-facts item"}).text.strip().replace('\n\n\n',', ').split(',')
+            job_snapshot = ','.join(job_snapshot_list[1:])
+            job_type = job_snapshot_list[0]
+            job_info = soup.find_all(name="div", attrs={"class":"description"})
 
 
-        # print(job_company)
-        # print(job_company)  # foreign key point to table company
+            company_name = soup.find(name="div", attrs={"class":"company-info-panel"})\
+                        .find(name="div", attrs={"class":"company-info"}).find(name = "header").text.strip()
 
-        # print(job_info)
-        # print(job_date) #post date
-        # print(re.findall('\d+', job_date)[0])  #date(only number)
-        # print(job_snapshot) 
+            company_address_li = soup.find(name="div", attrs={"class":"company-info-panel"})\
+                            .find(name="ul", attrs={"class":"address"}).find_all(name = "li")
+            company_address = ''
+            pattern = re.compile(r', \w{2}')
+            for item in company_address_li:
+                company_address += item.text.replace('\n', ' ').strip()
+                if pattern.findall(item.text) != []:
+                    break
 
-        ####insert into db
-        conn = sqlite3.connect(DBNAME)
-        cur = conn.cursor()
-        statement = '''
-            SELECT count(*)
-            FROM Company
-            WHERE Name=? AND Region=? AND State=?
-        '''
-        params = (company_name, job_company[1], job_company[2])
-        cur.execute(statement, params)
-        result = cur.fetchall()
-        if result[0][0] == 0:
+            if len(job_info) > 1:
+                job_info = ','.join([ainfo.text.strip() for ainfo in job_info])
+            else:
+                job_info = job_info[0].text.strip()
+
+
+            # print(job_company)
+            # print(job_company)  # foreign key point to table company
+
+            # print(job_info)
+            # print(job_date) #post date
+            # print(re.findall('\d+', job_date)[0])  #date(only number)
+            # print(job_snapshot) 
+
+            ####insert into db
+            conn = sqlite3.connect(DBNAME)
+            cur = conn.cursor()
             statement = '''
-                INSERT INTO Company (Name, Region, State, Address)
-                VALUES (?, ?, ?, ?)
+                SELECT count(*)
+                FROM Company
+                WHERE Name=? AND Region=? AND State=?
             '''
-            insertion = (company_name, job_company[1], job_company[2].upper(), company_address)
+            params = (company_name, job_company[1], job_company[2])
+            cur.execute(statement, params)
+            result = cur.fetchall()
+            if result[0][0] == 0:
+                statement = '''
+                    INSERT INTO Company (Name, Region, State, Address)
+                    VALUES (?, ?, ?, ?)
+                '''
+                insertion = (company_name, job_company[1], job_company[2].upper(), company_address)
+                cur.execute(statement, insertion)
+                conn.commit()
+
+            statement = 'INSERT INTO Jobs (Title, Jobtype, CompanyId, PostDate, JobSnapshot, JobDescription)'
+            statement += ''' SELECT ?, ?, c.Id, ?, ?, ? '''
+            statement += ' FROM Company as c'
+            statement += ' WHERE c.Name=? AND c.Region=? AND c.State=?'
+
+            insertion = (job_title, job_type, job_date, job_snapshot, job_info, company_name, job_company[1], job_company[2])
             cur.execute(statement, insertion)
             conn.commit()
+            c += 1
+            print("-"*20)
+            print("JOB {}:".format(c))  # num of inserted jobs
+            print(job_title)
 
-        statement = 'INSERT INTO Jobs (Title, Jobtype, CompanyId, PostDate, JobSnapshot, JobDescription)'
-        statement += ''' SELECT ?, ?, c.Id, ?, ?, ? '''
-        statement += ' FROM Company as c'
-        statement += ' WHERE c.Name=? AND c.Region=? AND c.State=?'
+        except Exception as e:
+            error_num.append(count)
+            print('ERROR:{}'.format(e))
+            # print(statement)
+            errorfile.write(aurl + '\n')# job expired
+            count_error += 1
+        print("="*30)
 
-        insertion = (job_title, job_type, job_date, job_snapshot, job_info, company_name, job_company[1], job_company[2])
-        cur.execute(statement, insertion)
-        conn.commit()
-        c += 1
-        print("-"*20)
-        print("JOB {}:".format(c))  # num of inserted jobs
-        print(job_title)
-
-    except Exception as e:
-        error_num.append(count)
-        print('ERROR:{}'.format(e))
-        # print(statement)
-        errorfile.write(aurl + '\n')# job expired
-        count_error += 1
-    print("="*30)
-
-errorfile.close()
-print("{} Error occured.".format(count_error)) 
-print(error_num)
+    errorfile.close()
+    detailurl_file.close()
+    print("{} Error occured.".format(count_error)) 
+    print(error_num)
 
 

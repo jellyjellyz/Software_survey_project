@@ -1,3 +1,6 @@
+######scrap all pages in https://www.careerbuilder.com with seach query 'software-engineer'
+######save detail page url into ./caches/detail_urls.text
+
 import requests
 from bs4 import BeautifulSoup
 import proxy_ip
@@ -41,42 +44,40 @@ def make_request_using_cache(url, theheader):
     return CACHE_DICTION[unique_ident]
 
 
+if __name__ == '__main__':
+    baseurl = 'https://www.careerbuilder.com'
+    count = 0
+    file = open("./caches/detail_urls.text", "w")
+    for i in range(1, 101):
+    # for i in range(1, 2):
+        extendurl = baseurl + "/jobs-software-engineer?page_number={}".format(i)
+        para = {'Referer': '{}'.format(extendurl), \
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
+        'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+        resp = make_request_using_cache(extendurl, theheader = para)
+        # resp = requests.get(url, headers = para).text
+        soup = BeautifulSoup(resp, 'html.parser')
+        # print(soup.prettify())
 
-baseurl = 'https://www.careerbuilder.com'
-count = 0
-# file = open("./caches/detail_urls.text", "w")
-for i in range(1, 101):
-# for i in range(1, 2):
-    extendurl = baseurl + "/jobs-software-engineer?page_number={}".format(i)
-    para = {'Referer': '{}'.format(extendurl), \
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
-    'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
-    resp = make_request_using_cache(extendurl, theheader = para)
-    # resp = requests.get(url, headers = para).text
-    soup = BeautifulSoup(resp, 'html.parser')
-    # print(soup.prettify())
+        jobs = soup.find_all(name="div", attrs={"class":"job-row"})
+        print("-"*20)
+        print("Getting page {}".format(i))
+        for ajob in jobs:
+            try:
+                job_title = ajob.find(attrs={"class": "job-title"}).text.strip()
+                website = ajob.find(attrs = {"class": "job-title"}).find("a")["href"] 
+                job_location = ajob.find(name='div', attrs={"class": "columns end large-2 medium-3 small-12"})\
+                                            .find(name='h4', attrs={"class": "job-text"}).text
+                count+=1
+                print('-'*10)
+                print('Job{}'.format(count))
+                # print(website)
+                print(job_title)
+                print(job_location)
+                
+                file.write(baseurl + website + '\n')
 
-    jobs = soup.find_all(name="div", attrs={"class":"job-row"})
-    print("-"*20)
-    print("Getting page {}".format(i))
-    for ajob in jobs:
-        try:
-            job_title = ajob.find(attrs={"class": "job-title"}).text.strip()
-            website = ajob.find(attrs = {"class": "job-title"}).find("a")["href"] 
-            job_location = ajob.find(name='div', attrs={"class": "columns end large-2 medium-3 small-12"})\
-                                        .find(name='h4', attrs={"class": "job-text"}).text
-            count+=1
-            print('-'*10)
-            print('Job{}'.format(count))
-            # print(website)
-            print(job_title)
-            print(job_location)
-            
-            # file.write(baseurl + website + '\n')
-
-        except:
-            pass   # ad
-    print("="*30)
-# file.close() 
-
-
+            except:
+                pass   # it's an ad not a job in that position
+        print("="*30)
+    file.close()

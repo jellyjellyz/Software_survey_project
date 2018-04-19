@@ -1,3 +1,6 @@
+#######save description of all jobs in jobDescription.txt
+#######generate a word cloud by
+
 import sqlite3
 
 conn = sqlite3.connect('jobs.sqlite')
