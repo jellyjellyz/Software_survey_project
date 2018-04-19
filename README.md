@@ -34,7 +34,7 @@ This project can be divided into 4 parts:
 >1. *./data_process/jobs.sqlite* is well prepared, you could just look at it.
 >2. If you want to regenerate *./data_process/jobs.sqlite*. STEP A: run get_all_intro_pages.py; STEP B: run get_all_detail_pages.py; type in yes to rewrite the database. STEP C: run get_company_coordinate.py to get geolat, geolon and fill the spaces in table Company in  *./data_process/jobs.sqlite* 
 
-##1. Data scraping 
+## 1. Data scraping 
 
 All of the data comes from [CareerBuilder-SoftwareEngineer](https://www.careerbuilder.com/jobs-software-engineer), there are 100 pages in total and 25 jobs in each page. 
 
