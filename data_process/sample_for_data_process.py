@@ -51,7 +51,8 @@ baseurl = 'https://www.careerbuilder.com'
 count = 0
 file = open("./caches/sample_detail_urls.text", "w")
 for i in range(1, 2):
-    extendurl = baseurl + "/jobs-software-engineer?page_number={}".format(i)
+    # extendurl = baseurl + "/jobs-software-engineer?page_number={}".format(i)
+    extendurl = baseurl + "/landing/software-engineer?page_number={}".format(i)
     para = {'Referer': '{}'.format(extendurl), \
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
     'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
