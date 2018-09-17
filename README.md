@@ -11,7 +11,7 @@ This project can be divided into 4 parts:
 
 *requirements.txt*: Virtual environment requirement.
 
->Important note for grader!!!!!!!:  : )     : p    : D
+> : )     : p    : D
 >
 >Highly recommend download all of the cache files, and use saved caches to do the following steps. If you running the program without those caches , it will take very long time to make new requests. 
 >
